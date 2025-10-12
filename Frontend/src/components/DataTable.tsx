@@ -6,12 +6,22 @@ const DataTable: React.FC = () => {
     // Each row is an array of strings
     const [rows, setRows] = useState<string[][]>([]);
     const [newRow, setNewRow] = useState<string[]>(["", "", "", "", ""]);
+    
+    const demoData = [
+        ["123-456-7890", "John Doe", "johndoe@example.com", "123 Elm St, Springfield, IL, 62701", "Total Spend: $1200, Last Purchase: 2025-09-30"],
+        ["987-654-3210", "Jane Smith", "janesmith@example.com", "456 Oak St, Chicago, IL, 60601", "Total Spend: $850, Last Purchase: 2025-10-01"],
+        ["555-123-4567", "Mike Johnson", "mikej@example.com", "789 Pine St, Dallas, TX, 75201", "Total Spend: $600, Last Purchase: 2025-08-25"],
+        ["666-789-1234", "Emily Davis", "emilydavis@example.com", "321 Maple St, Boston, MA, 02108", "Total Spend: $1500, Last Purchase: 2025-09-29"],
+        ["777-555-9876", "Chris Lee", "chrislee@example.com", "654 Birch St, Seattle, WA, 98101", "Total Spend: $300, Last Purchase: 2025-07-19"]
+    ];
+
 
     // Fetch data on mount
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await getData();
+                // Simulating API call with demo data
+                const res = { data: demoData };
                 setRows(res.data || []);
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -19,6 +29,7 @@ const DataTable: React.FC = () => {
         };
         fetchData();
     }, []);
+
 
     // Handle adding a new row
     const handleAdd = async () => {
