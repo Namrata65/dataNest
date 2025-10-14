@@ -20,15 +20,15 @@ const DataTable: React.FC = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Simulating API call with demo data
-                const res = { data: demoData };
+                const res = await getData(); // ✅ Real API call
                 setRows(res.data || []);
             } catch (error) {
-                console.error("Error fetching data:", error);
+                console.error("Error fetching data from backend:", error);
             }
         };
         fetchData();
     }, []);
+
 
 
     // Handle adding a new row

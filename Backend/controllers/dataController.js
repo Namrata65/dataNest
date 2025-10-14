@@ -1,4 +1,5 @@
-// import { getData, addData, updateData, deleteData } from "../services/googleSheetsService.js";
+
+import { getData, addData, updateData, deleteData } from "../services/googleSheetsService.js";
 
 export const getAll = async (req, res) => {
   try {
