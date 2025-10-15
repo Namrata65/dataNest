@@ -23,9 +23,10 @@ const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 // ✅ READ data
 export const getData = async () => {
   try {
+    console.log('response here');
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: "Sheet1", // Skip header row
+      range: "Sheet1", 
     });
     console.log('response', response.data.values);
     return response.data.values || [];

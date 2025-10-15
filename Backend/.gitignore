@@ -1,6 +1,9 @@
 
 node_modules
 .env
+key.json
+*.json
+key
 
 # Ignore environment variables
 node_modules
