@@ -1,0 +1,6 @@
+{
+  "name": "Node.js 16",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:16",
+  "features": {},
+  "postCreateCommand": "node -v && node -p \"process.versions.openssl\""
+}
